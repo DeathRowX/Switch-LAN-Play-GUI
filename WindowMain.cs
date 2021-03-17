@@ -17,10 +17,14 @@ namespace Switch_LAN_Play_GUI
 
             Log.windowMain = this;
 
+            // DEGUB -->
             Log.Output("This is a message without a prefix");
             Log.Output("[DEBUG]: This is a normal message");
             Log.Output("[ERROR]: This is an error message");
             Log.Output("[APPLICATION]: This is a message from the application");
+
+            Servers.List = File.ImportJson("servers.json");
+            // <-- DEBUG
         }
 
         private void bLogsClear_Click(object sender, EventArgs e)
