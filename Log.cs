@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -57,15 +56,8 @@ namespace Switch_LAN_Play_GUI
 
         public static void Export()
         {
-            using (StreamWriter writer = new StreamWriter("logConsole.txt"))
-            {
-                writer.Write(windowMain.logConsole.Text);
-            }
-
-            using (StreamWriter writer = new StreamWriter("logError.txt"))
-            {
-                writer.Write(windowMain.logError.Text);
-            }
+            File.ExportText("logConsole.txt", windowMain.logConsole.Text);
+            File.ExportText("logError.txt", windowMain.logError.Text);
         }
 
         private static void SetColor(RichTextBox textbox, Color color)

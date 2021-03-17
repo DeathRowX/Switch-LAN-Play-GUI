@@ -31,14 +31,14 @@ namespace Switch_LAN_Play_GUI
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.bLogsClear = new System.Windows.Forms.Button();
-            this.bLogsExport = new System.Windows.Forms.Button();
-            this.bExit = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConsoleLog = new System.Windows.Forms.TabPage();
-            this.tabErrorLog = new System.Windows.Forms.TabPage();
             this.logConsole = new System.Windows.Forms.RichTextBox();
+            this.tabErrorLog = new System.Windows.Forms.TabPage();
             this.logError = new System.Windows.Forms.RichTextBox();
+            this.bExit = new System.Windows.Forms.Button();
+            this.bLogsExport = new System.Windows.Forms.Button();
+            this.bLogsClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -73,39 +73,6 @@ namespace Switch_LAN_Play_GUI
             this.splitContainer1.SplitterDistance = 459;
             this.splitContainer1.TabIndex = 1;
             // 
-            // bLogsClear
-            // 
-            this.bLogsClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bLogsClear.Location = new System.Drawing.Point(3, 490);
-            this.bLogsClear.Name = "bLogsClear";
-            this.bLogsClear.Size = new System.Drawing.Size(75, 23);
-            this.bLogsClear.TabIndex = 0;
-            this.bLogsClear.Text = "Clear Logs";
-            this.bLogsClear.UseVisualStyleBackColor = true;
-            this.bLogsClear.Click += new System.EventHandler(this.bLogsClear_Click);
-            // 
-            // bLogsExport
-            // 
-            this.bLogsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bLogsExport.Location = new System.Drawing.Point(84, 490);
-            this.bLogsExport.Name = "bLogsExport";
-            this.bLogsExport.Size = new System.Drawing.Size(75, 23);
-            this.bLogsExport.TabIndex = 1;
-            this.bLogsExport.Text = "Export Logs";
-            this.bLogsExport.UseVisualStyleBackColor = true;
-            this.bLogsExport.Click += new System.EventHandler(this.bLogsExport_Click);
-            // 
-            // bExit
-            // 
-            this.bExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bExit.Location = new System.Drawing.Point(372, 490);
-            this.bExit.Name = "bExit";
-            this.bExit.Size = new System.Drawing.Size(75, 23);
-            this.bExit.TabIndex = 2;
-            this.bExit.Text = "Exit";
-            this.bExit.UseVisualStyleBackColor = true;
-            this.bExit.Click += new System.EventHandler(this.bExit_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -130,17 +97,6 @@ namespace Switch_LAN_Play_GUI
             this.tabConsoleLog.Text = "Console";
             this.tabConsoleLog.UseVisualStyleBackColor = true;
             // 
-            // tabErrorLog
-            // 
-            this.tabErrorLog.Controls.Add(this.logError);
-            this.tabErrorLog.Location = new System.Drawing.Point(4, 22);
-            this.tabErrorLog.Name = "tabErrorLog";
-            this.tabErrorLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabErrorLog.Size = new System.Drawing.Size(436, 455);
-            this.tabErrorLog.TabIndex = 1;
-            this.tabErrorLog.Text = "Errors";
-            this.tabErrorLog.UseVisualStyleBackColor = true;
-            // 
             // logConsole
             // 
             this.logConsole.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -155,6 +111,17 @@ namespace Switch_LAN_Play_GUI
             this.logConsole.Text = "";
             this.logConsole.WordWrap = false;
             // 
+            // tabErrorLog
+            // 
+            this.tabErrorLog.Controls.Add(this.logError);
+            this.tabErrorLog.Location = new System.Drawing.Point(4, 22);
+            this.tabErrorLog.Name = "tabErrorLog";
+            this.tabErrorLog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabErrorLog.Size = new System.Drawing.Size(436, 455);
+            this.tabErrorLog.TabIndex = 1;
+            this.tabErrorLog.Text = "Errors";
+            this.tabErrorLog.UseVisualStyleBackColor = true;
+            // 
             // logError
             // 
             this.logError.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -168,6 +135,39 @@ namespace Switch_LAN_Play_GUI
             this.logError.TabIndex = 0;
             this.logError.Text = "";
             this.logError.WordWrap = false;
+            // 
+            // bExit
+            // 
+            this.bExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bExit.Location = new System.Drawing.Point(372, 490);
+            this.bExit.Name = "bExit";
+            this.bExit.Size = new System.Drawing.Size(75, 23);
+            this.bExit.TabIndex = 2;
+            this.bExit.Text = "Exit";
+            this.bExit.UseVisualStyleBackColor = true;
+            this.bExit.Click += new System.EventHandler(this.bExit_Click);
+            // 
+            // bLogsExport
+            // 
+            this.bLogsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bLogsExport.Location = new System.Drawing.Point(84, 490);
+            this.bLogsExport.Name = "bLogsExport";
+            this.bLogsExport.Size = new System.Drawing.Size(75, 23);
+            this.bLogsExport.TabIndex = 1;
+            this.bLogsExport.Text = "Export Logs";
+            this.bLogsExport.UseVisualStyleBackColor = true;
+            this.bLogsExport.Click += new System.EventHandler(this.bLogsExport_Click);
+            // 
+            // bLogsClear
+            // 
+            this.bLogsClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bLogsClear.Location = new System.Drawing.Point(3, 490);
+            this.bLogsClear.Name = "bLogsClear";
+            this.bLogsClear.Size = new System.Drawing.Size(75, 23);
+            this.bLogsClear.TabIndex = 0;
+            this.bLogsClear.Text = "Clear Logs";
+            this.bLogsClear.UseVisualStyleBackColor = true;
+            this.bLogsClear.Click += new System.EventHandler(this.bLogsClear_Click);
             // 
             // WindowMain
             // 
