@@ -23,18 +23,27 @@ namespace Switch_LAN_Play_GUI
         {
             string text = "";
 
-            using (StreamReader reader = new StreamReader(filename))
+            try
             {
-                text = reader.ReadToEnd();
+                using (StreamReader reader = new StreamReader(filename))
+                {
+                    text = reader.ReadToEnd();
+                }
+                Log.Output($"[APPLICATION]: File {filename} imported successfully");
             }
-
-            Log.Output($"[APPLICATION]: File {filename} imported successfully");
+            catch (Exception)
+            {
+                Log.Output($"[APPLICATION]: Failed to import file {filename}");
+            }
 
             return text;
         }
 
-        public static void ExportJson(string filename, List<Server> list)
+        public static void ExportJson(string filename, dynamic list)
         {
+            //Log.Output("[ERROR]: ImportJson(filename, list) not working. Use File.ExportText(filename, JsonConvert.SerializeObject(List<type>)) instead");
+            //return;
+
             using (StreamWriter writer = new StreamWriter(filename))
             {
                 writer.Write(JsonConvert.SerializeObject(list));
@@ -43,19 +52,24 @@ namespace Switch_LAN_Play_GUI
             Log.Output($"[APPLICATION]: File exported as {filename}");
         }
 
-        public static List<Server> ImportJson(string filename)
+        public static void ImportJson(string filename, dynamic list)
         {
-            List<Server> list = new List<Server>();
+            Log.Output("[ERROR]: ExportJson(filename, list) not working. Use List<type> = JsonConvert.DeserializeObject<List<type>>(File.ImportText(filename)) instead");
+            return;
 
-            using (StreamReader reader = new StreamReader(filename))
+            try
             {
-                string json = reader.ReadToEnd();
-                list = JsonConvert.DeserializeObject<List<Server>>(json);
+                using (StreamReader reader = new StreamReader(filename))
+                {
+                    string json = reader.ReadToEnd();
+                    list = JsonConvert.DeserializeObject<dynamic>(json);
+                }
+                Log.Output($"[APPLICATION]: File {filename} imported successfully");
             }
-
-            Log.Output($"[APPLICATION]: File {filename} imported successfully");
-
-            return list;
+            catch (Exception)
+            {
+                Log.Output($"[APPLICATION]: Failed to import file {filename}");
+            }
         }
 
         public static bool Download(string url, string filename)

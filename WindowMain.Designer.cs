@@ -30,6 +30,7 @@ namespace Switch_LAN_Play_GUI
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConsoleLog = new System.Windows.Forms.TabPage();
@@ -39,6 +40,7 @@ namespace Switch_LAN_Play_GUI
             this.bExit = new System.Windows.Forms.Button();
             this.bLogsExport = new System.Windows.Forms.Button();
             this.bLogsClear = new System.Windows.Forms.Button();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -49,11 +51,19 @@ namespace Switch_LAN_Play_GUI
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lVersion});
             this.statusStrip1.Location = new System.Drawing.Point(0, 516);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(913, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lVersion
+            // 
+            this.lVersion.Name = "lVersion";
+            this.lVersion.Size = new System.Drawing.Size(143, 17);
+            this.lVersion.Text = "{version} 2021.03.17.44100";
             // 
             // splitContainer1
             // 
@@ -180,6 +190,8 @@ namespace Switch_LAN_Play_GUI
             this.Name = "WindowMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Switch LAN Play GUI";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -203,6 +215,7 @@ namespace Switch_LAN_Play_GUI
         private System.Windows.Forms.Button bLogsClear;
         public System.Windows.Forms.RichTextBox logConsole;
         public System.Windows.Forms.RichTextBox logError;
+        private System.Windows.Forms.ToolStripStatusLabel lVersion;
     }
 }
 

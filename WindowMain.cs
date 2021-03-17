@@ -6,16 +6,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Switch_LAN_Play_GUI
 {
     public partial class WindowMain : Form
     {
+        public static string fileServerListName = "servers.json";
+        public static string fileSettingsName = "settings.json";
+        public static string fileLogConsoleName = "log_console.txt";
+        public static string fileLogErrorName = "log_error.txt";
+
         public WindowMain()
         {
             InitializeComponent();
 
             Log.windowMain = this;
+
+            lVersion.Text = $"Version {Version.Get()}";
 
             // DEGUB -->
             Log.Output("This is a message without a prefix");
@@ -23,7 +31,8 @@ namespace Switch_LAN_Play_GUI
             Log.Output("[ERROR]: This is an error message");
             Log.Output("[APPLICATION]: This is a message from the application");
 
-            Servers.List = File.ImportJson("servers.json");
+            Servers.List = JsonConvert.DeserializeObject<List<Server>>(File.ImportText(fileServerListName));
+            //File.ExportJson("Test.json", Servers.List);
             // <-- DEBUG
         }
 

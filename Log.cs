@@ -56,8 +56,8 @@ namespace Switch_LAN_Play_GUI
 
         public static void Export()
         {
-            File.ExportText("logConsole.txt", windowMain.logConsole.Text);
-            File.ExportText("logError.txt", windowMain.logError.Text);
+            File.ExportText(WindowMain.fileLogConsoleName, windowMain.logConsole.Text);
+            File.ExportText(WindowMain.fileLogErrorName, windowMain.logError.Text);
         }
 
         private static void SetColor(RichTextBox textbox, Color color)
