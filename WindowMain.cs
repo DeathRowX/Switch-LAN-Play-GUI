@@ -22,6 +22,7 @@ namespace Switch_LAN_Play_GUI
             InitializeComponent();
 
             Log.windowMain = this;
+            Servers.windowMain = this;
 
             lVersion.Text = $"Version {Version.Get()}";
 
@@ -34,6 +35,8 @@ namespace Switch_LAN_Play_GUI
             Servers.List = JsonConvert.DeserializeObject<List<Server>>(File.ImportText(fileServerListName));
             //File.ExportJson("Test.json", Servers.List);
             // <-- DEBUG
+
+            Servers.PopulateList();
         }
 
         private void bLogsClear_Click(object sender, EventArgs e)

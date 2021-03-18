@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom Controls\ServerListing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\ServerListing.Designer.cs">
+      <DependentUpon>ServerListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="File.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Servers.cs" />
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Custom Controls\ServerListing.resx">
+      <DependentUpon>ServerListing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WindowMain.resx">
       <DependentUpon>WindowMain.cs</DependentUpon>
     </EmbeddedResource>
